@@ -1,1 +1,1 @@
-# JavaScript-Interm-diaire-
+# JavaScript-Intermediaire-
