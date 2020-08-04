@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 25</title>
+		<script>
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Dans l'exercice précédent, deux blocs de code se 
+				ressemblent beaucoup. Ce sont les parties du programme 
+				qui permettent d'obliger l'utilisateur à saisir un nombre.
+				On pourrait donc créer une fonction qui évite d'avoir 
+				à écrire à deux reprises des instructions quasi identiques.
+				Écrivez cette fonction.
+
+				Veillez aux trois points suivants pour l'écriture de 
+				cette fonction :
+				_ La fonction ne peut pas ne se terminer tant que 
+				l'utilisateur n'a pas saisi de nombre.
+				_ La fonction prend en argument le message qui 
+				s'affichera à l'utilisateur lors de la saisie. 
+				_ La fonction retourne le nombre saisi par 
+				l'utilisateur. 
+			*/
+
+			// const myFunction = message => {
+			// 	let question = window.prompt(message);
+			// 	while (question === null || question === '' || isNaN(parseFloat(question))) {
+			// 		question = window.prompt(message);
+			// 	} 
+			// 	alert(`Bravo, vous avez entré le nombre ${parseFloat(question)}`);
+			// };
+
+			// Demander à Marc de nous expliquer l'énoncé et voir avec lui s'il est possible to ask two inputs with just one while loop.
+
+			// Réponse de Marc :
+
+			var question = function(message) {
+				var reponse = NaN;
+				while(isNaN(reponse)) {
+					reponse = prompt(message);
+					reponse = parseFloat(reponse); //si on ne met pas parseFloat(), la fonction renverra une concaténation et non pas une addition.
+				};
+				return reponse;
+			};
+
+			var lancement = function() {
+				var reponse1 = question('Donnez un premier nombre !');
+				var reponse2 = question('Donnez un deuxième nombre !');
+				alert(`L'addition de vos deux valeurs est : ${reponse1+reponse2}.`)
+			};
+
+		</script>
+	</head>
+	<body onload="lancement()">
+		<h1 onclick="lancement()">Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

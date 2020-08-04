@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 27</title>
+		<script>
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Reprenez le code de l'exercice précédent et 
+				utilisez une boucle pour afficher successivement 
+				les différentes valeurs du tableau.
+				
+				Utilisez l'attribut d'événement onload, la 
+				fonction prompt(), deux boucles for, une boucle 
+				while et la fonction alert().
+				
+				Il n'est pas nécessaire pour la seconde boucle 
+				for d'utiliser, par exemple, i < 4 comme limite 
+				pour la boucle. Regardez l'indication de l'Exercice 
+				27bis pour trouver la solution.
+			*/
+			// const myFunction = message => {
+			// 	let answers = [];
+			// 	for (let i = 0; i < 4; i++) {
+			// 		let question = prompt(message);
+			// 		while (question === null || isNaN(parseFloat(question)) === false || question === '') {
+			// 			question = prompt(message);
+			// 		};
+			// 		answers[i] = question;
+			// 		alert(`Vous avez entré le texte suivant : ${answers.join(' ')}.`);
+			// 	};
+			// };
+
+			// Question : was it possible, and if yes how, to make this solution work with two for loops?
+
+			// Réponse de Marc :
+
+			let lancement = function() {
+				let reponse = '';
+				let lesQuatreReponses = [];
+				for (let i=0;i<4;i++) {
+					while (reponse == '' || reponse == null) {
+						reponse = prompt('Donnez le texte' + (i+1));
+					};
+					lesQuatreReponses[i] = reponse;
+					reponse = null;
+				};
+				for (let i=0;lesQuatreReponses[i];i++) {
+					alert(lesQuatreReponses[i]);
+				};
+			};
+
+		</script>
+	</head>
+	<body onload="lancement('Veuillez saisir du texte (il y aura quatre demandes consécutives) :')">
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

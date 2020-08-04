@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 32</title>
+		<script>
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Réalisez le programme (algorithme) suivant:
+
+				Quand l'utilisateur clique sur le premier paragraphe une B.d.D 
+				lui demande si je souhaite aller sur Google :
+				_ s'il clique sur oui, ouvrez une fenêtre vers Google.
+				_ sinon, affichez une B.d.D avec un champ de saisie avec le texte : 
+				« Veuillez saisir l'url d'un site alternatif». Si l'utilisateur saisi un texte, 
+				ce texte est utilisé comme url pour ouvrir une nouvelle fenêtre.
+				_ sinon un message s'affiche dans une b.d.d avec le texte : « Tant pis ! » 
+				et vous faites revenir l'utilisateur au premier cas.
+
+				En bref, il s'agit de créer une boucle qui OBLIGE l'utilisateur 
+				à ouvrir une nouvelle fenêtre vers google ou un site alternatif 
+				de son choix.
+			*/
+
+			// const openGoogleOrWhat = (message) => {
+			// 	let confirmation = confirm(message);
+			// 	if (confirmation) {
+			// 		window.open(`https://www.google.com`);
+			// 	} else {
+			// 		let url = prompt(`Veuillez saisir l'url d'un site web alternatif (ex: www.google.com):`);
+			// 		while (url === null || url === '' || isNaN(url) === false) {
+			// 			alert("Tant pis !");
+			// 			return openGoogleOrWhat(message); //Question : why am I getting an infinite loop if I remove the return statement here?
+			// 		};
+			// 		window.open(`https://www.${url}.com`);
+			// 	}; 
+			// };
+
+
+			let questions = function() {
+				let choix = '';
+				while (choix == '' || choix == null) {
+					let choix = confirm('Voulez-vous aller sur le site de Google ?');
+					if (choix) {
+						open(`https://www.google.com`);
+					} else {
+						choix = prompt(`Veuillez saisir le nom d'un site alternatif :`);
+						if (choix == '' || choix == null) {
+							alert('Tant pis !')
+							questions();
+						} else {
+							open(`https://www.${choix}.com`, choix)
+						};
+					};
+				};
+			};
+
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p onclick="questions()">Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

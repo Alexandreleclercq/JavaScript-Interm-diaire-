@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 30</title>
+		<script>
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Réalisez le programme (algorithme) suivant :
+				Quand l'utilisateur clique sur le premier paragraphe, 
+				affichez une B.d.D avec champ de saisie à l'utilisateur.
+				L'utilisateur doit impérativement saisir une chaîne 
+				de caractère. Cette chaîne de caractère est ensuite 
+				utilisée pour ouvrir une nouvelle fenêtre à l'aide 
+				de la fonction open.
+			*/
+
+			const myFunction = function(message) {
+				let url = prompt(message);
+				while (url === null || url === '' || isNaN(url) === false) {
+					url = prompt(message)
+				};
+				open(`https://www.duckduckgo.com/${url}.com`);
+			};
+
+
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p onclick="myFunction('Veuillez saisir une chaîne de caractères :')">Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

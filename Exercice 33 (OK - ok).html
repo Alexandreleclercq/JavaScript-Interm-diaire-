@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 33</title>
+		<script>
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Réalisez le programme (algorithme) suivant :
+				Créer un tableau JavaScript contenant 5 urls.
+				Tant que l'ensemble du tableau n'a pas été parcouru, 
+				utilisez l'url contenue dans la case du tableau sur 
+				laquelle vous vous trouvez pour ouvrir une nouvelle fenêtre.
+				Utilisez une boucle while... avec un compteur de tours.
+			*/
+
+			const arr = ["https://www.google.com", "https://www.renault.fr", "https://www.duckduckgo.com", "https://www.seaofthieves.com", "https://www.bing.com"];
+			const openUrl = () => {
+				let i = 0;
+				while (arr[i]) {
+					window.open(arr[i]);
+					i++;
+				};
+			};
+
+			// Question : was there another (simpler) way of solving this problem? 
+			// I don't like starting the counter at -1 and deducing 1 from the property length of the array...
+			// I just had to move i++ down a line for it to work the way I intended it to.
+
+		</script>
+	</head>
+	<body onload="openUrl()">
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

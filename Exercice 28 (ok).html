@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 28</title>
+		<script>
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Dans l'exercice précédent, le nombre de saisies de 
+				l'utilisateur est écrit dans le code.
+				
+				Reprenez le code de l'exercice précédent. Après chaque saisie, 
+				demandez à l'utilisateur s'il souhaite faire une nouvelle saisie.
+				Quand il répond par la négative, affichez successivement toutes 
+				ses saisies dans des B.d.D.
+				
+				Utilisez l'attribut d'événement onload, la fonction prompt(), 
+				une boucle for, des boucles while et la fonction alert().
+			*/
+
+			// const myFunction = message => {
+			// 	let answers = [];
+			// 	for (let i = 0; i < 4; i++) {
+			// 		let question = prompt(message);
+			// 		while (question === null || isNaN(parseFloat(question)) === false || question === '') {
+			// 			question = prompt(message);
+			// 		};
+			// 		confirm('Voulez-vous continuer ?');
+			// 		answers[i] = question;
+			// 		alert(`Vous avez entré le texte suivant : ${answers.join(' ')}.`);
+			// 	};
+			// };
+
+
+			let lancement = function(message) {
+				let reponse = message;
+				let lesQuatreReponses = [];
+				let compteur = 0;
+				let continuer = true;
+				while (continuer) {
+					reponse = '';
+					while (reponse == '' || reponse == null) {
+						reponse = prompt('Donnez le texte');
+					}
+					lesQuatreReponses[compteur] = reponse;
+					continuer = confirm('Voulez-vous continuer ?')
+					compteur++
+				}
+				for (let i=0;lesQuatreReponses[i];i++) {
+					alert(lesQuatreReponses[i])
+				};
+			};
+
+		</script>
+	</head>
+	<body onload="lancement(`Merci d'entrer ici du texte (il vous sera demandé de faire quatre saisies) :`)">
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

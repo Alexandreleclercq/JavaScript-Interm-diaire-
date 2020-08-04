@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 31</title>
+		<script>
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Réalisez le programme (algorithme) suivant :
+				Quand l'utilisateur clique sur le premier paragraphe, une B.d.D lui demande s'il souhaite aller sur Google :
+				_ S'il clique sur oui, ouvrez une fenêtre vers Google.
+				_ Sinon affichez une B.d.D avec un champ de saisie avec le texte : « Veuillez saisir l'url d'un site alternatif ».
+					_ Si l'utilisateur saisit un texte, ce texte est utilisé comme url pour ouvrir une nouvelle fenêtre.
+					_ Sinon un message s'affiche dans une b.d.d avec le texte : « Tant pis ! ».
+			*/
+			// const openGoogleOrNot = () => {
+			// 	let confirmation = confirm("Voulez-vous allez sur le moteur de rechercher Google ?");
+			// 	if (confirmation) {
+			// 		window.open(`https://www.google.com`);
+			// 	} else if (confirmation === false) {
+			// 		let url = prompt("Entrez l'url du site que vous souhaitez visiter :");
+			// 		while (url === null || url === '' || isNaN(url) === false) {
+			// 			url = prompt("Vous devez saisir un texte (pas de chiffres ou de symboles) : ");
+			// 		}
+			// 		window.open(`https://www.${url}.com`)
+			// 	} else {
+			// 		alert("Tant pis !")
+			// 	};
+			// };
+
+
+			let questions = function() {
+				let choix = confirm('Voulez-vous aller sur le site de Google ?');
+				if (choix) {
+					open('https://www.google.com', 'Google');
+				} else {
+					choix = prompt(`Veuillez saisir l'url d'un site alternatif :`);
+					if (choix == '' || choix == null) {
+						alert('Tant pis !')
+						questions();
+					} else {
+						open(`https://www.${url}.com`)
+					};
+				};
+			};
+
+
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p onclick="questions()">Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

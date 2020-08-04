@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 24</title>
+		<script>
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Réalisez le programme (algorithme) suivant :
+				Quand l'utilisateur clique sur le deuxième paragraphe, 
+				obligez-le à saisir un nombre.
+				Puis obligez-le, à nouveau, à saisir un second nombre. 
+				Enfin, affichez une B.d.D avec le résultat du calcul 
+				de la somme des deux nombres.*/
+
+				const myFunction = () => {
+					let question = window.prompt("Entrez un chiffre ou un nombre :");
+					while (question === null || question === '' || isNaN(parseFloat(question))) {
+						question = window.prompt("Ceci n'est pas un chiffre ou un nombre. Réessayez :");
+					}
+					let question2 = window.prompt("Allez, un deuxième nombre :");
+					while (question2 === null || question2 === '' || isNaN(parseFloat(question2))) {
+						question2 = window.prompt("Ceci n'est pas un chiffre ou un nombre. Je pensais que vous saviez, maintenant... :")
+					}
+					alert(`Félicitations ! Le total de votre saisi est : ${parseFloat(question) + parseFloat(question2)} !`);
+				};
+
+
+
+				/* Utilisez l'attribut d'événement onclick, la fonction 
+				prompt(), la fonction alert(), la fonction parseFloat(), 
+				la fonction isNaN() et des boucles while.
+			*/
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p style="background-color: grey; color: bisque; width: fit-content;" onclick="myFunction()">Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>
